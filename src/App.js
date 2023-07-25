@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
 import useMediaQuery from './hooks/useMediaQuery';
 import Navbar from './scenes/Navbar';
+import MySkills from './scenes/MySkills';
 import DotGroup from './scenes/DotGroup';
 import Landing from './scenes/Landing';
 import LineGradient from './components/LineGradient';
+import { motion } from 'framer-motion';
 
 function App() {
   const [selectedPage, setSelectedPage] = useState('home');
@@ -39,6 +41,15 @@ function App() {
         <Landing setSelectedPage={setSelectedPage} />
       </div>
       <LineGradient />
+      <div className="w-5/6 mx-auto md:h-full ">
+        <motion.div
+          margin="0 0 -200px 0"
+          amount="all"
+          onViewportEnter={() => setSelectedPage('skills')}
+        >
+          <MySkills />
+        </motion.div>
+      </div>
     </div>
   );
 }
