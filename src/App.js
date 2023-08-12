@@ -4,10 +4,10 @@ import Navbar from './scenes/Navbar';
 import MySkills from './scenes/MySkills';
 import Projects from './scenes/Projects';
 import Testimonials from './scenes/Testimonials';
+import Contact from './scenes/Contact';
 import DotGroup from './scenes/DotGroup';
 import Landing from './scenes/Landing';
 import LineGradient from './components/LineGradient';
-import { motion } from 'framer-motion';
 
 function App() {
   const [selectedPage, setSelectedPage] = useState('home');
@@ -44,20 +44,19 @@ function App() {
       </div>
       <LineGradient />
       <div className="w-5/6 mx-auto md:h-full ">
-        <motion.div
-          margin="0 0 -200px 0"
-          amount="all"
-          onViewportEnter={() => setSelectedPage('skills')}
-        >
-          <MySkills />
-        </motion.div>
+        <MySkills />
       </div>
       <LineGradient />
       <div className="w-5/6 mx-auto">
         <Projects />
       </div>
+      <LineGradient />
       <div className="w-5/6 mx-auto md:h-full">
         <Testimonials />
+      </div>
+      <LineGradient />
+      <div className="w-5/6 mx-auto md:h-full">
+        <Contact />
       </div>
     </div>
   );
